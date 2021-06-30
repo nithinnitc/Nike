@@ -6,9 +6,14 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #f5f5f5;
+  background-color: #fff;
 }
 
 header {
@@ -58,11 +63,11 @@ header {
             position: fixed;
             opacity: 0;
 
-            z-index: 9;
+            z-index: -1;
             top: 4.65em;
             left: 0;
             transform: translateY(-15px);
-            transition: all 0.2s ease-in-out;
+            transition: all 0.3s ease-in-out;
 
             width: 100%;
             padding-top: 0px;
@@ -126,7 +131,7 @@ header {
       background-color: #fff;
       height: 0;
       width: 100%;
-      transition: all 0.4s;
+      transition: all 0.2s;
 
       &:hover {
         height: 89vh;
@@ -160,6 +165,64 @@ header {
 
 .active {
   border-bottom: 2px solid black;
+}
+
+.swiper {
+  width: 200%;
+  display: flex;
+  position: absolute;
+  top: 63px;
+  left: 0;
+  z-index: 15;
+  .swiper-info {
+    background-color: #f5f5f5;
+    transform: translateX(0);
+    // transition: all 0.2s;
+
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 5px 0;
+
+    .heading {
+      font-size: 14px;
+      font-weight: 300;
+      text-transform: uppercase;
+      padding: 3px;
+    }
+
+    .sub-heading {
+      font-size: 12px;
+      padding: 3px;
+      .link {
+        color: black;
+        &--black {
+          color: black;
+        }
+      }
+    }
+  }
+
+  animation: swiper 15s linear infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes swiper {
+  0% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  90% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 ///////////////////////////////////////////////

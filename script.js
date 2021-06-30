@@ -35,3 +35,16 @@ menuSub.forEach(function (item) {
     child.classList.remove("active");
   });
 });
+
+const swiper = document.querySelector(".swiper");
+const nav = document.querySelector(".nav");
+
+nav.addEventListener("mouseenter", function () {
+  swiper.style.zIndex = -1;
+  swiper.style.transition = "all 0.1s";
+});
+
+nav.addEventListener("mouseleave", function () {
+  swiper.style.transition = "all 1s";
+  swiper.style.zIndex = 12;
+});
